@@ -1,0 +1,26 @@
+{
+  "name": "la-reina",
+  "version": "1.0.0",
+  "description": "La Reina es el BOT App del espacio del Unico Rey de Copas ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marioierullo/la-reina.git"
+  },
+  "author": "Los Admins del espacio Unico Rey de Copas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marioierullo/la-reina/issues"
+  },
+  "homepage": "https://github.com/marioierullo/la-reina#readme",
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0"
+  }
+}
