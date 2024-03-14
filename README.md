@@ -1,2 +1,1 @@
-# la-reina
-La bot de la comunidad / espacio del Unico Rey de Copas
+La Reina bot del espacio Unico Rey de Copas
