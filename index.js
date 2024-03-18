@@ -10,7 +10,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 // Get port, or default to 3000
-const PORT = process.env.PORT || 3000;
+//const PORT = process.env.PORT || 3000;
 
 // Require the necessary discord.js classes
 const { Client, GatewayIntentBits, Collection } = require('discord.js');
@@ -22,6 +22,12 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 //Collection is used to store and efficiently retrieve commands for execution.
 //Attaching a .commands property to your client instance allows the access to your commands in other files.
 client.commands = new Collection();
+
+//initialize a Collection to store cooldowns of commands.
+//The key will be the command names, and the values will be Collections 
+//associating the user's id (key) to the last time (value) 
+//this user used this command.
+client.cooldowns = new Collection();
 
 //dynamically retrieve your command files
 const foldersPath = path.join(__dirname, 'commands');
