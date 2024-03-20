@@ -13,10 +13,25 @@ const path = require('node:path');
 //const PORT = process.env.PORT || 3000;
 
 // Require the necessary discord.js classes
-const { Client, GatewayIntentBits, Collection } = require('discord.js');
+const { Client, GatewayIntentBits, Partials, Collection } = require('discord.js');
 
 // Create a new client instance
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const client = new Client({ 
+	intents: [
+		GatewayIntentBits.Guilds,
+		GatewayIntentBits.GuildMessages,
+		GatewayIntentBits.GuildMessageReactions,
+		GatewayIntentBits.GuildMessageTyping,
+		GatewayIntentBits.DirectMessages,
+		GatewayIntentBits.DirectMessageReactions,
+		GatewayIntentBits.DirectMessageTyping
+	],
+	partials: [
+		Partials.Message,
+		Partials.Channel,
+		Partials.Reaction
+	] 
+});
 
 //The Collection class extends JavaScript's native Map class, and includes more extensive, useful functionality. 
 //Collection is used to store and efficiently retrieve commands for execution.
