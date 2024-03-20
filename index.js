@@ -9,9 +9,6 @@ const fs = require('node:fs');
 //path helps construct paths to access files and directories. 
 const path = require('node:path');
 
-// Get port, or default to 3000
-//const PORT = process.env.PORT || 3000;
-
 // Require the necessary discord.js classes
 const { Client, GatewayIntentBits, Partials, Collection } = require('discord.js');
 
@@ -79,12 +76,3 @@ for (const file of eventFiles) {
 
 // Log in to Discord with your client's token
 client.login(process.env.DISCORD_TOKEN);
-
-//creating an express server
-//const express = require('express');
-
-// Create an express app
-//const app = express();
-
-// Parse request body and verifies incoming requests using discord-interactions package
-//app.use(express.json({ verify: VerifyDiscordRequest(process.env.PUBLIC_KEY) }));
