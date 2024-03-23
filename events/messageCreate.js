@@ -5,6 +5,7 @@ const { Events, ChannelType } = require('discord.js');
 module.exports = {
 	name: Events.MessageCreate,
 	async execute(message) {
+        //check for different types messages or authors not utilized
         if (message.author.bot) return false;
         if (message.channel.type == ChannelType.DM) return false;
         if (message.channel.type == ChannelType.GroupDM) return false;
