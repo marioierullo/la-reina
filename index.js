@@ -41,7 +41,7 @@ client.commands = new Collection();
 //this user used this command.
 client.cooldowns = new Collection();
 
-//dynamically retrieve your command files
+//dynamically retrieve your command\utility files
 const foldersPath = path.join(__dirname, 'commands');
 const commandFolders = fs.readdirSync(foldersPath);
 
@@ -63,11 +63,15 @@ for (const folder of commandFolders) {
 //dynamically retrieve your event files
 const eventsPath = path.join(__dirname, 'events');
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
+//serverReady function
+let keepAlive;
 
 for (const file of eventFiles) {
 	const filePath = path.join(eventsPath, file);
 	const event = require(filePath);
-	if (event.once) {
+	if (typeof event === 'function') {
+		keepAlive = event;
+	} else if (event.once) {
 		client.once(event.name, (...args) => event.execute(...args));
 	} else {
 		client.on(event.name, (...args) => event.execute(...args));
@@ -76,3 +80,6 @@ for (const file of eventFiles) {
 
 // Log in to Discord with your client's token
 client.login(process.env.DISCORD_TOKEN);
+if (typeof keepAlive === 'function') {
+	keepAlive();
+}

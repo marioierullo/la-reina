@@ -4,6 +4,7 @@
   "description": "La Reina es el BOT App del espacio del Unico Rey de Copas ",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,7 +19,8 @@
   "homepage": "https://github.com/marioierullo/la-reina#readme",
   "dependencies": {
     "discord.js": "^14.14.1",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "express": "^4.19.1"
   },
   "devDependencies": {
     "eslint": "^8.57.0"
