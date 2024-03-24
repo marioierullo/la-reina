@@ -1,8 +1,8 @@
 const express = require('express');
 const server = express();
 
-// Get port, or default to 3000
-const port = process.env.PORT || 3000;
+// Get port
+const port = process.env.PORT;
 
 server.all(`/`, (req, res) => {
     res.send(`Result: [OK].`);
