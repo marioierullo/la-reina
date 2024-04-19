@@ -8,5 +8,5 @@ module.exports = {
 		.setDescription('Replies with Pong!'),
 	async execute(interaction) {
 		await interaction.reply({ content: 'Pong!', ephemeral: true });
-	},
+	}
 };

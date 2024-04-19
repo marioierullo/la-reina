@@ -12,5 +12,5 @@ module.exports = {
 			content: `This server is ${interaction.guild.name} and has ${interaction.guild.memberCount} members.`,
 			ephemeral: true 
 		});
-	},
+	}
 };

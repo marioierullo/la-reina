@@ -13,5 +13,5 @@ module.exports = {
 			content: `This command was run by ${interaction.user.username}, who joined on ${interaction.member.joinedAt}.`,
 			ephemeral: true 
 		});
-	},
+	}
 };

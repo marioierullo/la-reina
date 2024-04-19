@@ -38,5 +38,5 @@ module.exports = {
 				ephemeral: true 
 			});
         }
-	},
+	}
 };
